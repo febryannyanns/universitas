@@ -1,0 +1,406 @@
+<!-- ================= TAMBAHAN: PENERJEMAH EN | ID ================= -->
+<style>
+  .lang button,
+  .lang-menu button {
+    background: none;
+    border: 0;
+    font: inherit;
+    font-weight: 700;
+    color: #9aa5b8;
+    cursor: pointer;
+    padding: 4px 2px;
+  }
+
+  .lang button.on,
+  .lang-menu button.on {
+    color: #fff;
+  }
+
+  .lang button:hover,
+  .lang-menu button:hover {
+    color: var(--gold);
+  }
+
+  .lang-menu {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    font-size: 1.1rem;
+  }
+
+  .lang-menu .sep {
+    width: 1px;
+    height: 16px;
+    background: #fff;
+  }
+</style>
+
+<script>
+(() => {
+  // =========================================================================
+  // KAMUS INDONESIA -> ENGLISH
+  // =========================================================================
+  const DICTIONARY = {
+    /* Bar Atas & Menu */
+    "Mahasiswa": "Students",
+    "Dosen & Tendik": "Faculty & Staff",
+    "Alumni": "Alumni",
+    "Tamu": "Guests",
+    "Cari": "Search",
+    "Beranda": "Home",
+    "Tentang Kami": "About Us",
+    "Akademik": "Academics",
+    "Pendaftaran": "Registration",
+    "Berita": "News",
+    "Kontak": "Contact",
+    "Cari Nama": "Search Names",
+    "Daftar Sekarang": "Register Now",
+
+    /* Hero */
+    "Mengabdi untuk Bangsa, Menginspirasi Dunia": "Serving the Nation, Inspiring the World",
+    "Bergabunglah dengan salah satu perguruan tinggi terbaik dan wujudkan masa depan gemilang.": "Join one of the best universities and build a brilliant future.",
+    "Penerimaan Mahasiswa Baru": "New Student Admissions",
+    "Jelajahi Program Studi": "Explore Study Programs",
+
+    /* Beranda Tambahan */
+    "Mengapa Universitas Nusantara?": "Why Universitas Nusantara?",
+    "Tiga alasan untuk memulai masa depanmu bersama kami.": "Three reasons to start your future with us.",
+    "Kepemimpinan": "Leadership",
+    "Membentuk lulusan berkarakter pemimpin yang siap memberi dampak bagi masyarakat.": "Shaping graduates with leadership character who are ready to make an impact on society.",
+    "Wawasan Global": "Global Perspective",
+    "Kolaborasi internasional, joint degree, dan pertukaran mahasiswa.": "International collaboration, joint degrees, and student exchange.",
+    "Riset & Inovasi": "Research & Innovation",
+    "Laboratorium modern dan ekosistem startup kampus yang aktif.": "Modern laboratories and an active campus startup ecosystem.",
+    "Fakultas": "Faculties",
+    "Jelajahi fakultas dan program studi kami.": "Explore our faculties and study programs.",
+    "Fakultas Teknik": "Faculty of Engineering",
+    "Fakultas Kedokteran": "Faculty of Medicine",
+    "Fakultas Ekonomika dan Bisnis": "Faculty of Economics and Business",
+    "Fakultas Ilmu Budaya": "Faculty of Humanities",
+
+    /* Kartu Program */
+    "Program Sarjana (S1)": "Undergraduate Program (S1)",
+    "Informasi jalur masuk, jadwal seleksi, dan syarat pendaftaran program sarjana.": "Admission routes, selection schedule, and registration requirements for undergraduate programs.",
+    "Pascasarjana (S2 & S3)": "Graduate Programs (Master's & Doctoral)",
+    "Program magister dan doktor untuk pengembangan riset dan profesionalisme.": "Master's and doctoral programs for research and professional development.",
+    "Beasiswa": "Scholarships",
+    "Berbagai peluang bantuan pendidikan dan beasiswa prestasi untuk mahasiswa.": "Various education assistance and achievement scholarship opportunities for students.",
+    "Selengkapnya": "Read more",
+
+    /* Berita */
+    "Kabar Nusantara": "Nusantara News",
+    "Lihat Semua Berita": "View All News",
+    "Tim Riset Universitas Nusantara Kembangkan Teknologi Ramah Lingkungan": "Universitas Nusantara Research Team Develops Eco-Friendly Technology",
+    "Inovasi terbaru dari fakultas teknik berhasil memenangkan penghargaan tingkat internasional...": "The latest innovation from the engineering faculty has won an international award...",
+    "Pembukaan Penerimaan Mahasiswa Baru Jalur Prestasi 2027": "Opening of 2027 New Student Admissions via the Achievement Track",
+    "Pendaftaran jalur mandiri prestasi resmi dibuka mulai hari ini secara online...": "Registration for the independent achievement track officially opens today online...",
+    "Seminar Nasional: Tantangan Pendidikan Tinggi di Era Digital": "National Seminar: Higher Education Challenges in the Digital Era",
+    "Dihadiri oleh pakar pendidikan dari berbagai negara untuk mendiskusikan transformasi digital...": "Attended by education experts from various countries to discuss digital transformation...",
+
+    /* Tentang Kami */
+    "Fakta dan Angka": "Facts and Figures",
+    "Pendidikan dan Pengajaran": "Education and Teaching",
+    "Riset": "Research",
+    "Inovasi": "Innovation",
+    "Multikampus": "Multi-campus",
+    "Fakultas dan Sekolah": "Faculties and Schools",
+    "Program Studi": "Study Programs",
+    "Dosen": "Lecturers",
+    "Pusat": "Centers",
+    "Pusat Unggulan Iptek": "Science & Technology Centers of Excellence",
+    "Pusat Penelitian": "Research Centers",
+    "Kelompok Keahlian": "Expertise Groups",
+    "Laboratorium": "Laboratories",
+    "HKI": "Intellectual Property Rights",
+
+    /* Footer */
+    "Akses Cepat": "Quick Access",
+    "Perpustakaan": "Library",
+    "Portal Mahasiswa": "Student Portal",
+    "Jurnal Ilmiah": "Scientific Journals",
+    "Karir & Alumni": "Careers & Alumni",
+    "© 2026 Universitas Nusantara. Hak Cipta Dilindungi.": "© 2026 Universitas Nusantara. All rights reserved.",
+
+    /* Pencarian Nama */
+    "Pencarian Nama": "Name Search",
+    "Pilih kategori, lalu ketik nama untuk mencari.": "Choose a category, then type a name to search.",
+    "Ketik nama...": "Type a name...",
+    "Ketik nama untuk menampilkan hasil pencarian.": "Type a name to show search results.",
+    "Nama tidak ditemukan.": "Name not found.",
+    "Nothing — belum ada data tamu.": "Nothing — no guest data yet.",
+    "Mahasiswa aktif": "Active student",
+
+    /* Perpustakaan */
+    "Perpustakaan Digital": "Digital Library",
+    "Koleksi buku populer terbitan Gramedia & grup Kompas Gramedia yang bisa dibaca secara digital lewat Gramedia Digital atau pratinjau Google Books.": "A collection of popular books published by Gramedia & the Kompas Gramedia group that can be read digitally via Gramedia Digital or Google Books preview.",
+    "Cari judul atau penulis...": "Search title or author...",
+    "Semua": "All",
+    "Fiksi": "Fiction",
+    "Pengembangan Diri": "Self-Development",
+    "Sains & Sejarah": "Science & History",
+    "Bisnis & Keuangan": "Business & Finance",
+    "Anak": "Children",
+    "Baca di Gramedia Digital": "Read on Gramedia Digital",
+    "Pratinjau": "Preview",
+    "Buku tidak ditemukan.": "No books found.",
+
+    /* Portal Mahasiswa */
+    "Khusus mahasiswa aktif. Data akun tersimpan di browser perangkat ini saja.": "For active students only. Account data is stored only in this device's browser.",
+    "Masuk": "Log In",
+    "Keluar": "Log Out",
+    "Belum punya akun?": "Don't have an account?",
+    "Daftar di sini": "Register here",
+    "Sudah punya akun?": "Already have an account?",
+    "Daftar": "Register",
+    "Daftar Akun Mahasiswa Aktif": "Register Active Student Account",
+    "Nama lengkap": "Full name",
+    "Ulangi password": "Repeat password",
+    "Password (min. 6 karakter)": "Password (min. 6 characters)",
+    "NIM (8-12 digit angka)": "Student ID (8-12 digits)",
+    "-- Pilih Program Studi --": "-- Choose Study Program --",
+    "Nama": "Name",
+    "Aktif": "Active",
+    "Kartu Rencana Studi": "Study Plan Card",
+    "Kode": "Code",
+    "Mata Kuliah": "Course",
+    "SKS": "Credits",
+    "Jadwal": "Schedule",
+    "Nilai Smt Lalu": "Last Sem. Grade",
+    "Statistika": "Statistics",
+    "Metodologi Penelitian": "Research Methodology",
+    "Bahasa Inggris Akademik": "Academic English",
+    "NIM atau password salah.": "Student ID or password is incorrect.",
+    "Anda telah keluar.": "You have logged out.",
+    "Pendaftaran berhasil! Silakan masuk dengan NIM dan password.": "Registration successful! Please log in with your Student ID and password.",
+
+    /* Jurnal Ilmiah */
+    "Cari artikel ilmiah seperti di Google Scholar. Hasil diambil dari jurnal tepercaya (terakreditasi SINTA / terindeks Scopus & DOAJ).": "Search scientific articles like on Google Scholar. Results come from trusted journals (SINTA accredited / Scopus & DOAJ indexed).",
+    "contoh: energi terbarukan, stunting, UMKM digital": "e.g. renewable energy, stunting, digital MSMEs",
+    "Cari artikel": "Search articles for",
+    "di basis data tepercaya:": "in trusted databases:",
+    "Kunjungi jurnal": "Visit journal",
+    "Cari artikel di jurnal ini": "Search articles in this journal",
+    "Teknik": "Engineering",
+    "Kesehatan": "Health",
+    "Ekonomi": "Economics",
+    "Sains": "Science",
+    "Sosial": "Social",
+    "Pendidikan": "Education",
+    "Tidak ada jurnal di katalog kami. Gunakan tombol basis data di atas.": "No journals in our catalog. Use the database buttons above.",
+
+    /* Karir & Alumni */
+    "Layanan karir dan jejaring alumni, mengacu pada model Universitas Indonesia (CDC UI & ILUNI UI) dan Universitas Gadjah Mada (ECC UGM & KAGAMA).": "Career services and alumni network, modeled after Universitas Indonesia (CDC UI & ILUNI UI) and Universitas Gadjah Mada (ECC UGM & KAGAMA).",
+    "Layanan Karir": "Career Services",
+    "Lowongan & Magang": "Jobs & Internships",
+    "Jaringan Alumni": "Alumni Network",
+    "Job Fair & Campus Hiring": "Job Fair & Campus Hiring",
+    "Pelatihan CV & Wawancara": "CV & Interview Training",
+    "Konseling Karir": "Career Counseling",
+    "Magang & MBKM": "Internships & MBKM",
+    "Referensi Resmi": "Official References",
+    "Cari posisi atau perusahaan...": "Search position or company...",
+    "Posisi": "Position",
+    "Perusahaan": "Company",
+    "Lokasi": "Location",
+    "Jenis": "Type",
+    "Magang": "Internship",
+    "Kontrak": "Contract",
+    "Statistik Lulusan (ilustrasi)": "Graduate Statistics (illustration)",
+    "Indikator": "Indicator",
+    "Nilai": "Value",
+    "Rata-rata masa tunggu kerja": "Average time to find a job",
+    "Bekerja sesuai bidang": "Working in their field",
+    "Melanjutkan studi": "Continuing studies",
+    "Berwirausaha": "Entrepreneurship",
+
+    /* PMB */
+    "Penerimaan Mahasiswa Baru 2026/2027": "New Student Admissions 2026/2027",
+    "Portal pendaftaran daring Universitas Nusantara. Data pendaftar tersimpan di browser perangkat ini saja.": "Universitas Nusantara online registration portal. Applicant data is stored only in this device's browser.",
+    "Jelajah Program Studi": "Explore Study Programs",
+    "Langkah 1 dari 3 — Formulir Pendaftaran": "Step 1 of 3 — Registration Form",
+    "Email aktif (soal tes dikirim ke sini)": "Active email (test questions are sent here)",
+    "Asal sekolah (SMA/SMK/MA)": "School of origin (high school)",
+    "-- Pilihan Program Studi 1 --": "-- Study Program Choice 1 --",
+    "-- Pilihan Program Studi 2 (opsional) --": "-- Study Program Choice 2 (optional) --",
+    "Kirim Pendaftaran": "Submit Registration",
+    "Langkah 2 dari 3 — Pembayaran Biaya Pendaftaran": "Step 2 of 3 — Registration Fee Payment",
+    "Nomor Pendaftaran": "Registration Number",
+    "Tagihan": "Amount Due",
+    "Metode Pembayaran": "Payment Methods",
+    "Saya Sudah Bayar": "I Have Paid",
+    "Batalkan Pendaftaran": "Cancel Registration",
+    "Langkah 3 dari 3 — Tes Seleksi": "Step 3 of 3 — Selection Test",
+    "Ringkasan Pendaftaran": "Registration Summary",
+    "Daftar Ulang": "Register Again",
+    "Cari program studi... (contoh: kedokteran, informatika)": "Search study programs... (e.g. medicine, informatics)",
+    "Program studi tidak ditemukan.": "Study program not found."
+  };
+
+  const MONTHS = {
+    Januari: "January",
+    Februari: "February",
+    Maret: "March",
+    April: "April",
+    Mei: "May",
+    Juni: "June",
+    Juli: "July",
+    Agustus: "August",
+    September: "September",
+    Oktober: "October",
+    November: "November",
+    Desember: "December"
+  };
+
+  const REGEX_RULES = [
+    [/^(\d+) hasil$/, "$1 results"],
+    [/^(\d+) program studi$/, "$1 study programs"],
+    [/^Sekitar (\d+) jurnal tepercaya$/, "About $1 trusted journals"],
+    [/^Telepon: (.*)$/, "Phone: $1"],
+    [/^Selamat datang, (.*)!$/, "Welcome, $1!"],
+    [
+      /^(\d{1,2}) (Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember) (\d{4})$/,
+      (match, day, month, year) => `${MONTHS[month]} ${day}, ${year}`
+    ]
+  ];
+
+  // =========================================================================
+  // FUNGSI PENERJEMAHAN
+  // =========================================================================
+  function translateText(text) {
+    const trimmed = text.trim();
+    if (!trimmed) return text;
+
+    if (DICTIONARY[trimmed] !== undefined) {
+      return text.replace(trimmed, DICTIONARY[trimmed]);
+    }
+
+    for (const [regex, replacement] of REGEX_RULES) {
+      if (regex.test(trimmed)) {
+        return text.replace(trimmed, trimmed.replace(regex, replacement));
+      }
+    }
+
+    return text;
+  }
+
+  // =========================================================================
+  // LOGIKA MESIN DOM TRANSLATOR
+  // =========================================================================
+  const originalNodeValues = new WeakMap();
+  const SKIP_TAGS = { SCRIPT: true, STYLE: true, TEXTAREA: true };
+  let currentLang = "id";
+  let isProcessing = false;
+
+  function traverseAndTranslate(node) {
+    // 1. Text Node
+    if (node.nodeType === Node.TEXT_NODE) {
+      if (!node.parentNode || SKIP_TAGS[node.parentNode.nodeName]) return;
+
+      if (currentLang === "en") {
+        if (!originalNodeValues.has(node)) {
+          originalNodeValues.set(node, node.nodeValue);
+        }
+        const translated = translateText(originalNodeValues.get(node));
+        if (translated !== node.nodeValue) {
+          node.nodeValue = translated;
+        }
+      } else if (originalNodeValues.has(node)) {
+        node.nodeValue = originalNodeValues.get(node);
+      }
+    } 
+    // 2. Element Node
+    else if (node.nodeType === Node.ELEMENT_NODE) {
+      if (SKIP_TAGS[node.nodeName]) return;
+
+      if (node.hasAttribute && node.hasAttribute("placeholder")) {
+        if (currentLang === "en") {
+          if (!node.dataset.phId) {
+            node.dataset.phId = node.getAttribute("placeholder");
+          }
+          node.setAttribute("placeholder", translateText(node.dataset.phId));
+        } else if (node.dataset.phId) {
+          node.setAttribute("placeholder", node.dataset.phId);
+        }
+      }
+
+      node.childNodes.forEach(traverseAndTranslate);
+    }
+  }
+
+  function applyTranslation() {
+    isProcessing = true;
+    traverseAndTranslate(document.body);
+    isProcessing = false;
+  }
+
+  // Mengamati perubahan DOM dinamis
+  new MutationObserver((mutations) => {
+    if (isProcessing || currentLang !== "en") return;
+    isProcessing = true;
+    mutations.forEach((mutation) => mutation.addedNodes.forEach(traverseAndTranslate));
+    isProcessing = false;
+  }).observe(document.body, { childList: true, subtree: true });
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    try {
+      localStorage.setItem("un_lang", lang);
+    } catch (error) {
+      console.warn("Storage access restricted:", error);
+    }
+
+    applyTranslation();
+
+    document.querySelectorAll("[data-l]").forEach((btn) => {
+      btn.classList.toggle("on", btn.dataset.l === lang);
+    });
+  }
+
+  // =========================================================================
+  // INISIALISASI TOMBOL & EVENT
+  // =========================================================================
+  // Tombol EN | ID di Header
+  const headerBox = document.querySelector(".lang");
+  if (headerBox) {
+    headerBox.innerHTML = '<button data-l="en">EN</button><i class="sep"></i><button data-l="id">ID</button>';
+  }
+
+  // Tombol Bahasa di Menu Samping (Mobile)
+  const menuPanel = document.getElementById("menuPanel");
+  if (menuPanel) {
+    menuPanel.insertAdjacentHTML(
+      "beforeend",
+      '<div class="lang-menu"><button data-l="en">EN</button><i class="sep"></i><button data-l="id">ID</button></div>'
+    );
+  }
+
+  // Link "Language: ID/EN" di Bar Atas
+  document.querySelectorAll(".top-bar a").forEach((link) => {
+    if (/language/i.test(link.textContent)) {
+      link.style.cursor = "pointer";
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        setLanguage(currentLang === "en" ? "id" : "en");
+      });
+    }
+  });
+
+  // Listener untuk seluruh tombol bergaya data-l
+  document.querySelectorAll("[data-l]").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.l));
+  });
+
+  // Panggil bahasa tersimpan atau default "id"
+  let savedLang = "id";
+  try {
+    savedLang = localStorage.getItem("un_lang") || "id";
+  } catch (error) {
+    console.warn("Storage access restricted:", error);
+  }
+
+  setLanguage(savedLang);
+})();
+</script>
